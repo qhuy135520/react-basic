@@ -2,15 +2,14 @@ import { useState } from 'react'
 import './App.scss'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Router } from 'react-router-dom'
 
 import Nav from './Nav/Nav'
 import ListToDo from './todos/ListToDo'
 import MyComponent from './Example/MyComponent';
 import Home from './Example/Home';
 import ListUser from '../Users/ListUser';
-
-
+import DetailUser from '../Users/DetailUser';
 function App() {
 
   return (
@@ -29,6 +28,7 @@ function App() {
           <Route path="/todos" element={<ListToDo />} />
           <Route path="/about" element={<MyComponent />} />
           <Route path="/user" element={<ListUser />} />
+          <Route path="/user/:id" element={<DetailUser />} />
         </Routes>
         <ToastContainer
           position="top-right"
